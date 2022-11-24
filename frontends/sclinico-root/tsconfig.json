@@ -1,0 +1,15 @@
+{
+  "extends": "ts-config-single-spa",
+  "files": ["src/spms-root-config.ts"],
+  "compilerOptions": {
+    "declarationDir": "dist"
+  },
+  "target":"es5",
+  "module": "es2020",
+  "lib": [
+    "es2018",
+    "dom"
+  ],
+  "include": ["src/**/*"],
+  "exclude": ["src/**/*.test*"]
+}

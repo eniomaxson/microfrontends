@@ -1,0 +1,31 @@
+version: '3.9'
+services:
+  shared-app:
+    container_name: shared-app
+    build:
+      context: ./frontends/sclinico-shared
+      dockerfile: ./Dockerfile
+    ports:
+      - 4200:4200
+    volumes:
+      - ./frontends/sclinico-shared:/usr/src/app
+
+  accounts-app:
+    container_name: accounts-app
+    build:
+      context: ./frontends/sclinico-accounts
+      dockerfile: ./Dockerfile
+    ports:
+      - 4201:4201
+    volumes:
+      - ./frontends/sclinico-accounts:/usr/src/app
+      - /usr/src/app/node_modules
+  root-app:
+    container_name: root-app
+    build:
+      context: ./frontends/sclinico-root
+      dockerfile: ./Dockerfile
+    ports:
+      - 9000:9000
+    volumes:
+      - ./frontends/sclinico-root:/usr/src/app
