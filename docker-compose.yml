@@ -1,31 +1,55 @@
-version: '3.9'
+version: '3'
 services:
-  shared-app:
-    container_name: shared-app
+  keycloak:
+    container_name: keycloak
+    image: quay.io/keycloak/keycloak:20.0.1
+    ports:
+      - 8080:8080
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    command: start-dev
+    
+  shared:
+    container_name: shared
     build:
       context: ./frontends/sclinico-shared
       dockerfile: ./Dockerfile
     ports:
       - 4200:4200
     volumes:
-      - ./frontends/sclinico-shared:/usr/src/app
+      - ./frontends/sclinico-shared:/src/sclinico-shared
+      - /src/sclinico-shared
 
-  accounts-app:
-    container_name: accounts-app
+  accounts:
+    container_name: accounts
     build:
       context: ./frontends/sclinico-accounts
       dockerfile: ./Dockerfile
     ports:
       - 4201:4201
     volumes:
-      - ./frontends/sclinico-accounts:/usr/src/app
-      - /usr/src/app/node_modules
-  root-app:
-    container_name: root-app
+      - ./frontends/sclinico-accounts:/src/sclinico-accounts
+      - /src/sclinico-accounts/node_modules
+
+  appointments:
+    container_name: appointments
+    build:
+      context: ./frontends/sclinico-appointments
+      dockerfile: ./Dockerfile
+    ports:
+      - 4202:4202
+    volumes:
+      - ./frontends/sclinico-appointments:/src/sclinico-appointments
+      - /src/sclinico-appointments/node_modules
+
+  root:
+    container_name: root
     build:
       context: ./frontends/sclinico-root
       dockerfile: ./Dockerfile
     ports:
       - 9000:9000
     volumes:
-      - ./frontends/sclinico-root:/usr/src/app
+      - ./frontends/sclinico-root:/src/sclinico-root
+      - /src/sclinico-root/node_modules

@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "build:single-spa": "ng build sclinico-appointments --prod",
-    "serve:single-spa": "ng s --project sclinico-appointments --disable-host-check --port 4202 --live-reload false"
+    "serve:single-spa": "ng s --project sclinico-appointments --host 0.0.0.0 --disable-host-check --port 4202 --live-reload false --poll 2000"
   },
   "private": true,
   "dependencies": {

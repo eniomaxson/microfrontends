@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   keyCloackBaseUrl: 'http://localhost:8080/realms/sclinico/protocol/openid-connect',
-  keyCloakClientSecret: '9xnxhVewZRdyfFSpq94lNeEoTWF3WizT',
+  keyCloakClientSecret: 'ye38uqHZMaNzvLhI1cRIRCr4JDsQ7fvM',
 };
 
 /*
