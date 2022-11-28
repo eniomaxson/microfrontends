@@ -1,0 +1,12 @@
+// Import material theming functions
+@import "~@angular/material/theming";
+
+// Copy the palettes from your selected theme (usually theme.scss).
+$spms-primary: mat-palette($primary, 600);
+$spms-accent: mat-palette($accent, 800);
+$spms-warn: mat-palette($warn, 800);
+
+// Create your Sass color vars (will be available in all the project)
+$primary: mat-color($spms-primary);
+$accent: mat-color($spms-accent);
+$warn: mat-color($spms-warn);

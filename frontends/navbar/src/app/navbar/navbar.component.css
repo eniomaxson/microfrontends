@@ -1,0 +1,26 @@
+nav {
+    background-color: #0099cc;
+    color: #fff;
+    font-size: 36px;
+    align-items: center;
+    display: flex;
+  }
+  
+  .img-fit {
+    width: 70px;
+    overflow: hidden;
+    margin-left: 15px;
+    margin-right: 33%;
+    height: 71px;
+  }
+  
+  .logo {
+    height: 100%;
+    filter: brightness(0) invert(1);
+    filter: -ms;
+  }
+  
+  li {
+    list-style: none;
+  }
+  

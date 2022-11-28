@@ -6,28 +6,24 @@ import { AccountStore } from './../../account.store';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  
   loginForm: FormGroup;
 
   constructor(private accountStore: AccountStore, private fb: FormBuilder) {
-    this.loginForm =  this.fb.group({
+    this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
-  
-  ngOnInit(): void {
 
-  }
+  ngOnInit(): void {}
 
   login() {
-    console.log("entrou");
+    console.log('entrou');
 
     var login: LoginRequestModel = Object.assign({}, this.loginForm?.value);
     this.accountStore.authenticate(login);
-
   }
 }

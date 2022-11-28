@@ -1,0 +1,114 @@
+@import "../../../../spms.scss";
+
+:host {
+  display: flex;
+  justify-content: center;
+}
+
+.mat-card {
+  width: 50%;
+  display: block;
+  height: 330px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px 25px 0 25px;
+  width: 85%;
+}
+
+::ng-deep {
+  input.form-control:focus {
+    background-color: inherit !important;
+    border-color: none !important;
+    box-shadow: none !important;
+  }
+
+  mat-select.form-control {
+    background-color: inherit !important;
+    border: none !important;
+    box-shadow: none !important;
+    font: inherit !important;
+    padding: 0px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .mat-form-field-prefix .mat-icon {
+    margin-bottom: 0.2em;
+  }
+  .mat-form-field-appearance-outline .mat-form-field-infix {
+    border-top: 0;
+    padding: 0.4em 0 0.1em 0 !important;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-flex {
+    align-items: center;
+    padding: 0 0.75em 0 0.75em !important;
+  }
+
+  .mat-select-arrow-wrapper {
+    display: block !important;
+  }
+
+  .mat-horizontal-stepper-header-container {
+    display: none !important;
+  }
+
+  .mat-horizontal-stepper-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mat-tab-label:hover {
+    background-color: #f0f0f0;
+  }
+
+  .mat-tab-label-active {
+    color: mat-color($spms-primary);
+    font-weight: 600;
+    opacity: 1 !important;
+  }
+
+  .mat-tab-label {
+    max-width: 250px;
+  }
+
+  .mat-tab-label .mat-tab-label-content {
+    flex-wrap: wrap !important;
+  }
+
+  .mat-tab-label .mat-tab-label-content span {
+    display: flex !important;
+    justify-content: center !important;
+  }
+}
+
+.list {
+  color: mat-color($spms-primary);
+  margin: 25px;
+  width: 85%;
+  font-weight: 550;
+}
+
+.extra {
+  color: mat-color($spms-primary);
+  margin: 25px;
+  width: 85%;
+}
+
+.list ol {
+  font-weight: 500;
+}
+
+.mat-tab-group {
+  margin: 40px;
+}
+
+.btn-group button {
+  margin: 0 10px;
+}

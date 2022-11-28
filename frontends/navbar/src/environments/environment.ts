@@ -3,10 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  keyCloackBaseUrl:
-    'http://localhost:8080/realms/sclinico/protocol/openid-connect',
-  keyCloakClientSecret: 'utyOxNXLzCIOrbb2s9xltlEMXQdAKCd7',
+  production: false
 };
 
 /*
