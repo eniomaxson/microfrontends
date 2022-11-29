@@ -6,6 +6,7 @@
 }
 
 .mat-card {
+  margin-top: 150px;
   width: 50%;
   display: block;
   height: 330px;
@@ -75,7 +76,7 @@ form {
   }
 
   .mat-tab-label {
-    max-width: 250px;
+    width: 270px;
   }
 
   .mat-tab-label .mat-tab-label-content {
@@ -90,6 +91,7 @@ form {
 
 .list {
   color: mat-color($spms-primary);
+  height: 18vh;
   margin: 25px;
   width: 85%;
   font-weight: 550;
@@ -97,7 +99,7 @@ form {
 
 .extra {
   color: mat-color($spms-primary);
-  margin: 25px;
+  margin-top: 25px;
   width: 85%;
 }
 
@@ -111,4 +113,27 @@ form {
 
 .btn-group button {
   margin: 0 10px;
+}
+
+@media screen and (max-width: 1280px){
+
+  .mat-card {
+    margin-top: 50px;
+    width: 50%;
+  }
+
+  ::ng-deep {
+    input.form-control:focus {
+      background-color: inherit !important;
+      border-color: none !important;
+      box-shadow: none !important;
+    }
+    .mat-tab-label {
+      width: 180px;
+      font-size: x-small;
+    }
+  }
+  .list {
+    height: 30vh;
+  }
 }

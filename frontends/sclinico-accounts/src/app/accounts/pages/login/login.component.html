@@ -1,7 +1,7 @@
 <mat-card>
   <mat-card-content>
-    <mat-tab-group>
-      <mat-tab label="E-mail SNS">
+    <mat-tab-group mat-align-tabs="center">
+      <mat-tab label="E-MAIL SNS">
         <mat-stepper #stepper>
           <mat-step>
             <ng-template matStepLabel>info</ng-template>
@@ -13,8 +13,7 @@
                 </ol>
               </div>
               <button mat-flat-button matStepperNext color="primary">
-                <mat-icon>alternate_email</mat-icon>
-                Entrar com o e-mail
+                <mat-icon>alternate_email</mat-icon>&nbsp;Entrar com o e-mail
               </button>
             </ng-template>
           </mat-step>
@@ -68,8 +67,8 @@
       </mat-tab>
       <mat-tab>
         <ng-template mat-tab-label>
-          <span>Cartão cidadão ou</span>
-          <span>Cartão da Ordem dos Médicos</span>
+          <span>CARTÃO CIDADÃO OU</span>
+          <span>CARTÃO DA ORDEM DOS MÉDICOS</span>
         </ng-template>
         <mat-stepper #stepper1>
           <mat-step>
@@ -87,14 +86,14 @@
                 </ol>
               </div>
               <button mat-flat-button matStepperNext color="primary">
-                <mat-icon>assignment_ind</mat-icon>
+                <mat-icon>assignment_ind</mat-icon>&nbsp;
                 Ler cartão
               </button>
             </ng-template>
           </mat-step>
         </mat-stepper>
       </mat-tab>
-      <mat-tab label="Chave móvel digital">
+      <mat-tab label="CHAVE MÓVEL DIGITAL">
         <mat-stepper #stepper1>
           <mat-step>
             <ng-template matStepLabel>info</ng-template>
@@ -105,12 +104,12 @@
                   <li>De acesso ao seu telemóvel</li>
                   <li>Do seu código PIN da Chave Móvel Digital</li>
                 </ol>
-              </div>
-              <div class="extra">
-                Não tem Chave Móvel Digital? Registre-se <a>AQUI</a>!
+                <div class="extra">
+                  Não tem Chave Móvel Digital? Registre-se <a>AQUI</a>!
+                </div>
               </div>
               <button mat-flat-button matStepperNext color="primary">
-                <mat-icon>vpn_key</mat-icon>
+                <mat-icon>vpn_key</mat-icon>&nbsp;
                 Entrar com a Chave Móvel Digital
               </button>
             </ng-template>
