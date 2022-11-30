@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3'
 services:
   keycloak:
     container_name: keycloak
@@ -18,10 +18,11 @@ services:
     ports:
       - 4200:4200
     volumes:
-      - ./frontends/sclinico-shared:/usr/src/app
+      - ./frontends/sclinico-shared:/src/sclinico-shared
+      - /src/sclinico-shared
 
-  accounts-app:
-    container_name: accounts-app
+  accounts:
+    container_name: accounts
     build:
       context: ./frontends/sclinico-accounts
       dockerfile: ./Dockerfile
@@ -61,4 +62,5 @@ services:
     ports:
       - 9000:9000
     volumes:
-      - ./frontends/sclinico-root:/usr/src/app
+      - ./frontends/sclinico-root:/src/sclinico-root
+      - /src/sclinico-root/node_modules

@@ -1,7 +1,6 @@
-FROM node:16
-WORKDIR /usr/src/app
+FROM node:14.15.0-alpine
+WORKDIR /src/sclinico-root
 COPY package*.json ./
 RUN npm install
-COPY . .
 EXPOSE 9000
 CMD npm run start 
