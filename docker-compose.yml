@@ -19,7 +19,7 @@ services:
       - 4200:4200
     volumes:
       - ./frontends/sclinico-shared:/src/sclinico-shared
-      - /src/sclinico-shared
+      - /src/sclinico-shared/node_modules
 
   accounts:
     container_name: accounts
