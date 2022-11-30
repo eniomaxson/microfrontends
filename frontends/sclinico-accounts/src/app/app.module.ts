@@ -1,17 +1,20 @@
-import { LoginComponent } from './accounts/pages/login/login.component';
-import { AccountInterceptor } from './accounts/account.interceptor';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { AccountService } from './accounts/account.service';
-import { AccountStore } from './accounts/account.store';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { LoginComponent } from './accounts/pages/login/login.component';
+import { AccountService } from './accounts/account.service';
+import { AccountInterceptor } from './accounts/account.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { AccountStore } from './accounts/account.store';
+import { ACCOUNT_STORAGE } from './accounts/account.storage.provider';
+import { AccountStorageManager } from '@spms/shared';
+import { NotFoundComponent } from './notfound/notfound.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent],
+  declarations: [AppComponent, LoginComponent, NotFoundComponent],
   imports: [
     CommonModule,
     BrowserModule,
@@ -21,13 +24,14 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
   ],
   providers: [
-    AccountStore,
-    AccountService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AccountInterceptor,
       multi: true,
     },
+    { provide: ACCOUNT_STORAGE, useFactory: () => new AccountStorageManager() },
+    AccountStore,
+    AccountService,
   ],
   bootstrap: [AppComponent],
 })

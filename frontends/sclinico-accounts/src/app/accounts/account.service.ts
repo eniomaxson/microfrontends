@@ -1,17 +1,16 @@
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 import {
   JwtTokenResponseModel,
   UserInfoResponseModel,
   LoginRequestModel,
 } from './account.models';
-import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { environment } from './../../environments/environment';
 
 @Injectable()
 export class AccountService {
   private baseUrl = environment.keyCloackBaseUrl;
-  public isAuthenticated: boolean = false;
 
   private httpHeaders = new HttpHeaders().set(
     'Content-Type',
@@ -26,7 +25,9 @@ export class AccountService {
     return this.httpClient.post<JwtTokenResponseModel>(
       `${this.baseUrl}/token`,
       body,
-      { headers: this.httpHeaders }
+      {
+        headers: this.httpHeaders,
+      }
     );
   }
 

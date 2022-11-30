@@ -1,7 +1,7 @@
-import { LoginRequestModel } from './../../account.models';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
-import { AccountStore } from './../../account.store';
+import { AccountStore } from '../../account.store';
+import { LoginRequestModel } from './../../account.models';
 
 @Component({
   selector: 'app-login',
@@ -9,25 +9,21 @@ import { AccountStore } from './../../account.store';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  
   loginForm: FormGroup;
 
-  constructor(private accountStore: AccountStore, private fb: FormBuilder) {
-    this.loginForm =  this.fb.group({
+  constructor(private fb: FormBuilder, private accountStore: AccountStore) {
+    this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required],
     });
   }
-  
-  ngOnInit(): void {
 
+  ngOnInit(): void {
+    console.log(this.accountStore)
   }
 
   login() {
-    console.log("entrou");
-
     var login: LoginRequestModel = Object.assign({}, this.loginForm?.value);
     this.accountStore.authenticate(login);
-
   }
 }
