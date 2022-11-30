@@ -1,6 +1,7 @@
 {
   "extends": "ts-config-single-spa",
   "files": ["src/spms-sclinico-shared.ts"],
+  "experimentalDecorators": true,
   "compilerOptions": {
     "declarationDir": "dist"
   },
