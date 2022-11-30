@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4202 --live-reload false",
+    "start": "ng serve --port 4203 --live-reload false",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "build:single-spa:navbar": "ng build navbar --prod",
-    "serve:single-spa:navbar": "ng s --project navbar --disable-host-check --port 4202 --live-reload false"
+    "build:single-spa": "ng build navbar --prod",
+    "serve:single-spa": "ng s --project navbar --host 0.0.0.0 --disable-host-check --port 4203 --live-reload false --poll 2000"
   },
   "private": true,
   "dependencies": {
