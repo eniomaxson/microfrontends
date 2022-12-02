@@ -54,15 +54,16 @@ export class AccountStore {
   }
 
   authenticate(login: LoginRequestModel) {
+    
     this.accountService.authenticate(login).subscribe((token) => {
+      
       this.set('token', token);
 
       this.accountService.getUserInfo().subscribe((userInfo) => {
         this.set('userInfo', userInfo);
 
         this.router.navigate([
-          '/externalRedirect',
-          { externalUrl: '/appointments' },
+          '/externalRedirect', { externalUrl: '/appointments' },
         ]);
         
       });

@@ -7,7 +7,9 @@ import { APP_BASE_HREF } from '@angular/common';
 const externalUrlProvider = new InjectionToken('externalUrlRedirectResolver');
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', component: LoginComponent },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'login-then/:returnURL', component: LoginComponent },
   {
     path: 'externalRedirect',
     resolve: {
@@ -24,7 +26,7 @@ const routes: Routes = [
   providers: [
     {
       provide: APP_BASE_HREF,
-      useValue: '/',
+      useValue: '/accounts',
     },
     {
       provide: externalUrlProvider,

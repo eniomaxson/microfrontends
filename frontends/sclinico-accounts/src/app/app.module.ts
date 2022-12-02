@@ -9,8 +9,6 @@ import { AccountInterceptor } from './accounts/account.interceptor';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccountStore } from './accounts/account.store';
-import { ACCOUNT_STORAGE } from './accounts/account.storage.provider';
-import { AccountStorageManager } from '@spms/shared';
 import { NotFoundComponent } from './notfound/notfound.component';
 
 @NgModule({
@@ -29,7 +27,6 @@ import { NotFoundComponent } from './notfound/notfound.component';
       useClass: AccountInterceptor,
       multi: true,
     },
-    { provide: ACCOUNT_STORAGE, useFactory: () => new AccountStorageManager() },
     AccountStore,
     AccountService,
   ],

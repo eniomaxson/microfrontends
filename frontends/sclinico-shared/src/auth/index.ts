@@ -26,17 +26,21 @@ export interface AuthStorage {
 }
 
 export function isAuthenticated(): Boolean {
-  let stored = sessionStorage.get(AUTH_STORAGE_KEY);
-  return stored != undefined;
+  let stored = JSON.parse(
+    sessionStorage.getItem(AUTH_STORAGE_KEY)
+  ) as AuthStorage;
+  return stored?.token != null;
 }
 
-export function getAuthToken(): string {
+export function getAuthToken(): JwtToken {
   let auth = JSON.parse(sessionStorage.get(AUTH_STORAGE_KEY)) as AuthStorage;
-  return auth?.token?.access_token;
+  return auth?.token;
 }
 
 export function getUserInfo(): UserInfo {
-  let stored = JSON.parse(sessionStorage.getItem(AUTH_STORAGE_KEY)) as AuthStorage;
+  let stored = JSON.parse(
+    sessionStorage.getItem(AUTH_STORAGE_KEY)
+  ) as AuthStorage;
   return stored?.userInfo;
 }
 

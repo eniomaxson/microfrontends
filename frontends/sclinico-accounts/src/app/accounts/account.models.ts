@@ -1,6 +1,7 @@
 export interface LoginRequestModel {
   username: string;
   password: string;
+  returnURL?: string;
 }
 
 export interface UserInfoResponseModel {
